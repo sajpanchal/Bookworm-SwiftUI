@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7218BFB426AB10B30073CE39 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218BFB326AB10B30073CE39 /* AddBookView.swift */; };
 		729B97C526A9CBCC00310EEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B97C426A9CBCC00310EEF /* AppDelegate.swift */; };
 		729B97C726A9CBCC00310EEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B97C626A9CBCC00310EEF /* SceneDelegate.swift */; };
 		729B97C926A9CBCC00310EEF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B97C826A9CBCC00310EEF /* ContentView.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7218BFB326AB10B30073CE39 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		729B97C126A9CBCC00310EEF /* Bookworm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookworm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		729B97C426A9CBCC00310EEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		729B97C626A9CBCC00310EEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				729B97C426A9CBCC00310EEF /* AppDelegate.swift */,
 				729B97C626A9CBCC00310EEF /* SceneDelegate.swift */,
 				729B97C826A9CBCC00310EEF /* ContentView.swift */,
+				7218BFB326AB10B30073CE39 /* AddBookView.swift */,
 				729B97CD26A9CBD100310EEF /* Assets.xcassets */,
 				729B97D226A9CBD100310EEF /* LaunchScreen.storyboard */,
 				729B97D526A9CBD100310EEF /* Info.plist */,
@@ -152,6 +155,7 @@
 				729B97CC26A9CBCC00310EEF /* Bookworm.xcdatamodeld in Sources */,
 				729B97C726A9CBCC00310EEF /* SceneDelegate.swift in Sources */,
 				729B97C926A9CBCC00310EEF /* ContentView.swift in Sources */,
+				7218BFB426AB10B30073CE39 /* AddBookView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
