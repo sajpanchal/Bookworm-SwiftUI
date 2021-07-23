@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddBookView: View {
     @Environment(\.managedObjectContext) var moc
+    @Environment(\.presentationMode) var presentationMode
     @State var title = ""
     @State var author = ""
     @State var genre = ""
@@ -43,6 +44,7 @@ struct AddBookView: View {
                     newBook.genre = self.genre
                     newBook.review = self.review
                     try? self.moc.save()
+                    self.presentationMode.wrappedValue.dismiss()
                 }
             }
         }.navigationBarTitle("Add Book")
