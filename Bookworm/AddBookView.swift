@@ -21,18 +21,14 @@ struct AddBookView: View {
             Section {
                 TextField("Name of book", text:$title)
                 TextField("Author's name", text:$author)
-                Picker("Genre", selection:$genre) {
+                Picker("Genre", selection: $genre) {
                     ForEach(genres, id: \.self) {
                         Text($0)
                     }
-                }
+                }.pickerStyle(WheelPickerStyle())
             }
             Section {
-                Picker("Rating", selection:$rating) {
-                    ForEach(0..<6) {
-                        Text("\($0)")
-                    }
-                }
+                RatingView(rating: $rating)
                 TextField("Write a review", text:$review)
             }
             Section {
