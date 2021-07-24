@@ -9,7 +9,15 @@ import SwiftUI
 import CoreData
 
 struct DetailView: View {
-    let book:Book
+    let book: Book
+    @Environment(\.managedObjectContext) var moc
+    @Environment(\.presentationMode) var presentationMode
+    @State var showingDeleteAlert = false
+    func deleteBook() {
+        moc.delete(book)
+        try? self.moc.save()
+        presentationMode.wrappedValue.dismiss()
+    }
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -34,7 +42,18 @@ struct DetailView: View {
                     .font(.largeTitle)
                 Spacer()
             }
+            
         }.navigationBarTitle(Text(book.title ?? "Unknown Book"), displayMode: .inline)
+        .navigationBarItems(trailing: Button(action: {
+            self.showingDeleteAlert = true
+        }, label: {
+            Image(systemName:"trash")
+        }))
+        .alert(isPresented: $showingDeleteAlert, content: {
+            Alert(title: Text("Delete book"), message: Text("Are you sure?"), primaryButton: .destructive(Text("Delete")) {
+                self.deleteBook()
+            }, secondaryButton: .cancel())
+        })
     }
 }
 
