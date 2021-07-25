@@ -15,6 +15,13 @@ struct AddBookView: View {
     @State var genre = ""
     @State var rating = 3
     @State var review = ""
+    var date: String {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let str = dateFormatter.string(from: date)
+        return str
+    }
     let genres = ["Fantasy","Horror","Kids","Mystery","Poetry","Romance","Triller"]
     var body: some View {
         Form {
@@ -37,8 +44,9 @@ struct AddBookView: View {
                     newBook.title = self.title
                     newBook.author = self.author
                     newBook.rating = Int16(self.rating)
-                    newBook.genre = self.genre
+                    newBook.genre = self.genre.count > 0 ? self.genre : "N/A"
                     newBook.review = self.review
+                    newBook.date = self.date
                     try? self.moc.save()
                     self.presentationMode.wrappedValue.dismiss()
                 }
